@@ -175,7 +175,7 @@ class Track(core.Track):
         return load_score(self.score_path)
 
     @core.cached_property
-    def performance(self):
+    def performance(self): ###???
         return load_performance(self.performance_path)
 
     @core.cached_property
@@ -183,11 +183,11 @@ class Track(core.Track):
         return load_match(self.match_path)
 
     @core.cached_property
-    def note_array(self):
+    def note_array(self): ###score_note_array?
         return self.score.note_array()
 
     @core.cached_property
-    def performance_note_array(self):
+    def performance_note_array(self): ####performance_note_array?
         return self.performance.note_array()
 
 

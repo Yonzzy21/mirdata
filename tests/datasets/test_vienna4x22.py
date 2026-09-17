@@ -44,8 +44,8 @@ def test_track():
         "score": partitura.score.Score,
         "performance": partitura.performance.Performance,
         "match": tuple,
-        "note_array": np.ndarray,
-        "performance_note_array": np.ndarray,
+        "note_array": np.ndarray, #
+        "performance_note_array": np.ndarray, ###add the content we're expecting [(-0.5 , 0.5 , -0.5 , 0.5 ,   0,  8, 59, 1, 'n1', 16)
     }
 
     run_track_tests(track, expected_attributes, expected_property_types)
@@ -64,6 +64,16 @@ def test_load_score():
     score = vienna4x22.load_score(path)
     assert isinstance(score, partitura.score.Score)
     assert vienna4x22.load_score(None) is None
+    na = score.note_array()
+    assert na.shape[0] > 0 #check not empty
+    #checking the first row fits
+    # Exact checks for discrete fields (strings, ints):
+    assert na[0]["id"] == "n1"
+    assert na[0]["pitch"] == 59
+    assert na[0]["voice"] == 1
+    # Float timing fields
+    assert np.isclose(na[0]["onset_beat"], -0.5)
+    assert np.isclose(na[0]["duration_beat"], 0.5)
 
 
 def test_load_performance():
@@ -72,6 +82,14 @@ def test_load_performance():
     assert isinstance(perf, partitura.performance.Performance)
     na = perf.note_array()
     assert na.shape[0] > 0
+    #checking the first row fits
+    # Exact checks for discrete fields (strings, ints):
+    assert na[0]["id"] == "n0"
+    assert na[0]["pitch"] == 59
+    assert na[0]["velocity"] == 44
+    # Tolerance checks for floats:
+    assert np.isclose(na[0]["onset_sec"], 0.0)
+    assert np.isclose(na[0]["duration_sec"], 0.87395835)
     assert vienna4x22.load_performance(None) is None
 
 
@@ -83,5 +101,9 @@ def test_load_match():
     performance, alignment, score = result
     assert isinstance(performance, partitura.performance.Performance)
     assert isinstance(alignment, list) and len(alignment) > 0
+    # Check first alignment entry
+    assert alignment[0]["label"] == "match"
+    assert alignment[0]["score_id"] == "n1"
+    assert alignment[0]["performance_id"] == "n0"
     assert isinstance(score, partitura.score.Score)
     assert vienna4x22.load_match(None) is None
