@@ -45,8 +45,8 @@ def test_track():
         "score": partitura.score.Score,
         "performance": partitura.performance.Performance,
         "match": tuple,
-        "score_note_array": np.ndarray,  # Changing for the test and then fix loader to fit score_note_array
-        "performance_note_array": NoteData,  ###change from ndarray to NoteData,add the content we're expecting [(-0.5 , 0.5 , -0.5 , 0.5 ,   0,  8, 59, 1, 'n1', 16)
+        "score_note_array": np.ndarray,
+        "performance_note_array": NoteData,  # ###change from ndarray to NoteData
     }
 
     run_track_tests(track, expected_attributes, expected_property_types)
