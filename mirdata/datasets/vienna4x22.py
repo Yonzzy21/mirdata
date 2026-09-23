@@ -43,7 +43,7 @@ from typing import BinaryIO, Optional, TextIO, Tuple
 import librosa
 import numpy as np
 
-from mirdata import core, download_utils, io
+from mirdata import core, download_utils, io, annotations
 
 try:
     import partitura
@@ -147,12 +147,10 @@ class Track(core.Track):
             the alignment list carries a ``"label"`` key: ``"match"``, ``"deletion"``
             (score note not played), ``"insertion"`` (extra performance note), or
             ``"ornament"``.
-        note_array (numpy.ndarray): score note array with default fields. For custom
+        score_note_array (numpy.ndarray): score note array with default fields. For custom
             fields (pitch spelling, metrical position, grace notes, etc.) call
             ``track.score.note_array(**kwargs)`` directly.
-        performance_note_array (numpy.ndarray): performance note array with default
-            fields. For custom fields call ``track.performance.note_array(**kwargs)``.
-
+        performance_note_array (NoteData): performance note array with intervals in NoteData format
     """
 
     def __init__(self, track_id, data_home, dataset_name, index, metadata):
@@ -175,7 +173,7 @@ class Track(core.Track):
         return load_score(self.score_path)
 
     @core.cached_property
-    def performance(self): ###???
+    def performance(self):
         return load_performance(self.performance_path)
 
     @core.cached_property
@@ -183,12 +181,12 @@ class Track(core.Track):
         return load_match(self.match_path)
 
     @core.cached_property
-    def note_array(self): ###score_note_array?
+    def score_note_array(self):
         return self.score.note_array()
 
     @core.cached_property
-    def performance_note_array(self): ####performance_note_array?
-        return self.performance.note_array()
+    def performance_note_array(self):
+        return load_performance_note_array(self.performance_path)
 
 
 @io.coerce_to_bytes_io
@@ -220,6 +218,7 @@ def load_score(fhandle: TextIO):
     return partitura.load_score(fhandle.name)
 
 
+# for specific partitura information
 @io.coerce_to_bytes_io
 def load_performance(fhandle: BinaryIO):
     """Load a Vienna 4x22 performance MIDI with partitura.
@@ -232,6 +231,33 @@ def load_performance(fhandle: BinaryIO):
 
     """
     return partitura.load_performance_midi(fhandle.name)
+
+
+# ndarray to NoteData - for specific MirData format
+@io.coerce_to_bytes_io
+def load_performance_note_array(fhandle: BinaryIO) -> Optional[annotations.NoteData]:
+    """Load a Vienna 4x22 performance note array as NoteData.
+    
+    Args:
+        fhandle (str or file-like): path to a ``.mid`` file.
+    Returns:
+        NoteData: parsed note annotations.
+    """
+    perf = partitura.load_performance_midi(fhandle.name)
+    if perf is None:
+        return None
+    na = perf.note_array()
+    if len(na) == 0:
+        return annotations.NoteData(
+            np.empty((0, 2), dtype=float), "s", np.empty((0,), dtype=float), "midi"
+        )
+    else:
+        intervals = np.column_stack(
+            [na["onset_sec"], na["onset_sec"] + na["duration_sec"]]
+        ).astype(float)
+        pitches = na["pitch"].astype(float)
+
+    return annotations.NoteData(intervals, "s", pitches, "midi")
 
 
 @io.coerce_to_string_io

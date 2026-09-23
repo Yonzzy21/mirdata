@@ -1,5 +1,6 @@
 """Tests for the Vienna 4x22 loader."""
 
+from mirdata.annotations import NoteData
 import logging
 import os
 
@@ -44,8 +45,8 @@ def test_track():
         "score": partitura.score.Score,
         "performance": partitura.performance.Performance,
         "match": tuple,
-        "note_array": np.ndarray, #
-        "performance_note_array": np.ndarray, ###add the content we're expecting [(-0.5 , 0.5 , -0.5 , 0.5 ,   0,  8, 59, 1, 'n1', 16)
+        "score_note_array": np.ndarray,  # Changing for the test and then fix loader to fit score_note_array
+        "performance_note_array": NoteData,  ###change from ndarray to NoteData,add the content we're expecting [(-0.5 , 0.5 , -0.5 , 0.5 ,   0,  8, 59, 1, 'n1', 16)
     }
 
     run_track_tests(track, expected_attributes, expected_property_types)
@@ -65,8 +66,8 @@ def test_load_score():
     assert isinstance(score, partitura.score.Score)
     assert vienna4x22.load_score(None) is None
     na = score.note_array()
-    assert na.shape[0] > 0 #check not empty
-    #checking the first row fits
+    assert na.shape[0] > 0  # check not empty
+    # checking the first row fits
     # Exact checks for discrete fields (strings, ints):
     assert na[0]["id"] == "n1"
     assert na[0]["pitch"] == 59
@@ -76,21 +77,38 @@ def test_load_score():
     assert np.isclose(na[0]["duration_beat"], 0.5)
 
 
+###test for the partitura performance format
 def test_load_performance():
     path = os.path.join(DATA_HOME, "midi/Chopin_op10_no3_p01.mid")
     perf = vienna4x22.load_performance(path)
     assert isinstance(perf, partitura.performance.Performance)
     na = perf.note_array()
     assert na.shape[0] > 0
-    #checking the first row fits
+    # checking the first row fits
     # Exact checks for discrete fields (strings, ints):
     assert na[0]["id"] == "n0"
     assert na[0]["pitch"] == 59
     assert na[0]["velocity"] == 44
-    # Tolerance checks for floats:
     assert np.isclose(na[0]["onset_sec"], 0.0)
     assert np.isclose(na[0]["duration_sec"], 0.87395835)
     assert vienna4x22.load_performance(None) is None
+
+
+def test_load_performance_note_array():
+    path = os.path.join(DATA_HOME, "midi/Chopin_op10_no3_p01.mid")
+    note_data = vienna4x22.load_performance_note_array(path)
+
+    assert isinstance(note_data, NoteData)
+    assert note_data.interval_unit == "s"
+    assert note_data.pitch_unit == "midi"
+    assert note_data.intervals.shape == (451, 2)
+    assert len(note_data.pitches) == 451
+    # Check first note onset, offset, and pitch
+    assert np.isclose(note_data.intervals[0, 0], 0.0)
+    assert np.isclose(note_data.intervals[0, 1], 0.87395835)
+    assert note_data.pitches[0] == 59
+    # Test None handling
+    assert vienna4x22.load_performance_note_array(None) is None
 
 
 def test_load_match():
