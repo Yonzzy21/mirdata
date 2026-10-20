@@ -233,7 +233,7 @@ class Dataset(core.Dataset):
     @core.cached_property
     def _artists_to_track_mapping(self):
         mapping_path = os.path.join(
-            self.data_home, "SCMS/artists_to_track_mapping.json"
+            self.data_home, "Saraga-Carnatic-Melody-Synth/artists_to_track_mapping.json"
         )
 
         try:
@@ -248,7 +248,7 @@ class Dataset(core.Dataset):
 
     @core.cached_property
     def _metadata(self):
-        metadata_path = os.path.join(self.data_home, "SCMS/metadata.json")
+        metadata_path = os.path.join(self.data_home, "Saraga-Carnatic-Melody-Synth/metadata.json")
         try:
             with open(metadata_path, "r") as fhandle:
                 artists_metadata = json.load(fhandle)
