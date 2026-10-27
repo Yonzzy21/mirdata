@@ -92,6 +92,7 @@ def test_download_index_only_skips_extraction(tmp_path, mocker):
 
     assert unzip.call_count == 0
 
+
 def test_download(httpserver):
     data_home = "tests/resources/mir_datasets/idmt_smt_audio_effects_download"
     if os.path.exists(data_home):
