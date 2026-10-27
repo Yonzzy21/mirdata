@@ -314,16 +314,15 @@ class Dataset(core.Dataset):
             IOError: if a downloaded file's checksum is different from expected
 
         """
-        # Download the main zip file
-        download_path = download_utils.download_from_remote(
-            remote=self.remotes["full_dataset"],
-            save_dir=self.data_home,
+        super().download(
+            partial_download=partial_download,
             force_overwrite=force_overwrite,
+            cleanup=cleanup,
             allow_invalid_checksum=allow_invalid_checksum,
         )
-
-        # Unzip the main archive
-        download_utils.unzip(zip_path=download_path, cleanup=cleanup)
+        # don't continue to unzip nested archives if not downloading full_dataset
+        if partial_download and "full_dataset" not in partial_download:
+            return
 
         # Unzip the nested archives
         nested_zip_path = os.path.join(
