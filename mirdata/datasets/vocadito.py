@@ -42,8 +42,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="vocadito_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/vocadito_index_1.0.json?download=1",
-        checksum="4b991e3438eae6c09e9ebaf0ccab567a",
+        url="https://zenodo.org/records/24325468/files/vocadito_index_1.0.json?download=1",
+        checksum="92c1e4cbf38ff939bc045b4d57b00365",
     ),
     "sample": core.Index(filename="vocadito_index_1.0_sample.json"),
 }

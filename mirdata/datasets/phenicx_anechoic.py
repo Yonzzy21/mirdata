@@ -79,8 +79,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="phenicx_anechoic_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/phenicx_anechoic_index_1.0.json?download=1",
-        checksum="9a417f056a9d5ec3c17ea3341dd7175c",
+        url="https://zenodo.org/records/24325468/files/phenicx_anechoic_index_1.0.json?download=1",
+        checksum="8a5cee83ba72f8516eda920390432f5b",
     ),
     "sample": core.Index(filename="phenicx_anechoic_index_1.0_sample.json"),
 }

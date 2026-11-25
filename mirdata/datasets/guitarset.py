@@ -75,8 +75,8 @@ INDEXES = {
     "test": "sample",
     "1.1.0": core.Index(
         filename="guitarset_index_1.1.0.json",
-        url="https://zenodo.org/records/24294116/files/guitarset_index_1.1.0.json?download=1",
-        checksum="43c8d5ed23efec9fda0a5ba741c7be81",
+        url="https://zenodo.org/records/24325468/files/guitarset_index_1.1.0.json?download=1",
+        checksum="8832882ae4321023ded8b6b39943a41d",
     ),
     "sample": core.Index(filename="guitarset_index_1.1.0_sample.json"),
 }

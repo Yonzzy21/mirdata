@@ -61,8 +61,8 @@ INDEXES = {
     "test": "sample",
     "1.5": core.Index(
         filename="saraga_carnatic_index_1.5.json",
-        url="https://zenodo.org/records/24294116/files/saraga_carnatic_index_1.5.json?download=1",
-        checksum="a56a54a9704680b7cc0982b3688363df",
+        url="https://zenodo.org/records/24325468/files/saraga_carnatic_index_1.5.json?download=1",
+        checksum="6f5c666f705ca2bbf1674f4a1aaaeea2",
     ),
     "sample": core.Index(filename="saraga_carnatic_index_1.5_sample.json"),
 }

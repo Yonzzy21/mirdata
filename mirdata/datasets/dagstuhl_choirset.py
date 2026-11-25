@@ -72,8 +72,8 @@ INDEXES = {
     "test": "sample",
     "1.2.3": core.Index(
         filename="dagstuhl_choirset_index_1.2.3.json",
-        url="https://zenodo.org/records/24294116/files/dagstuhl_choirset_index_1.2.3.json?download=1",
-        checksum="79c5afdf4c93c10fae8d04cf7315899c",
+        url="https://zenodo.org/records/24325468/files/dagstuhl_choirset_index_1.2.3.json?download=1",
+        checksum="642ba48f43bbcd4857524b170fbe2b7a",
     ),
     "sample": core.Index(filename="dagstuhl_choirset_index_1.2.3_sample.json"),
 }

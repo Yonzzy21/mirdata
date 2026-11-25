@@ -76,8 +76,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="compmusic_indian_tonic_1.0.json",
-        url="https://zenodo.org/records/24294116/files/compmusic_indian_tonic_1.0.json?download=1",
-        checksum="c5d2e0362a34af283148e7b12f3326bc",
+        url="https://zenodo.org/records/24325468/files/compmusic_indian_tonic_1.0.json?download=1",
+        checksum="b91f8a6bb4d0f4ff71c688e572df73dd",
     ),
     "sample": core.Index(filename="compmusic_indian_tonic_1.0_sample.json"),
 }

@@ -56,8 +56,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="cuidado_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/cuidado_index_1.0.json?download=1",
-        checksum="a8e7b284c9ee6a0e5ef17d7fbf6d7150",
+        url="https://zenodo.org/records/24325468/files/cuidado_index_1.0.json?download=1",
+        checksum="4ab1ae02250dde4d4b215034b5745578",
     ),
     "sample": core.Index(filename="cuidado_index_1.0_sample.json"),
 }

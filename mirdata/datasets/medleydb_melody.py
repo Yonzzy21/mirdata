@@ -41,8 +41,8 @@ INDEXES = {
     "test": "sample",
     "5.0": core.Index(
         filename="medleydb_melody_index_5.0.json",
-        url="https://zenodo.org/records/24294116/files/medleydb_melody_index_5.0.json?download=1",
-        checksum="00c97337d4fcbf22a57d8808afb77cc6",
+        url="https://zenodo.org/records/24325468/files/medleydb_melody_index_5.0.json?download=1",
+        checksum="8171e3d1ca7be1492de4205c912f69d0",
     ),
     "sample": core.Index(filename="medleydb_melody_index_5.0_sample.json"),
 }

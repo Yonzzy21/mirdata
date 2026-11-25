@@ -37,8 +37,8 @@ INDEXES = {
     "test": "sample",
     "1.2": core.Index(
         filename="beatles_index_1.2.json",
-        url="https://zenodo.org/records/14007830/files/beatles_index_1.2.json?download=1",
-        checksum="6e1276bdab6de05446ddbbc75e6f6cbe",
+        url="https://zenodo.org/records/24325468/files/beatles_index_1.2.json?download=1",
+        checksum="eb1bcf23c6287e0f397cbe749fc22343",
     ),
     "sample": core.Index(filename="beatles_index_1.2_sample.json"),
 }

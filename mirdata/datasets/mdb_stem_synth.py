@@ -39,8 +39,8 @@ INDEXES = {
     "test": "sample",
     "1.0.0": core.Index(
         filename="mdb_stem_synth_index_1.0.0.json",
-        url="https://zenodo.org/records/24294116/files/mdb_stem_synth_index_1.0.0.json?download=1",
-        checksum="0420b47148f7feebd0b346e48230232f",
+        url="https://zenodo.org/records/24325468/files/mdb_stem_synth_index_1.0.0.json?download=1",
+        checksum="9f68e482064e40c9103fafc9b0f338f2",
     ),
     "sample": core.Index(filename="mdb_stem_synth_index_1.0.0_sample.json"),
 }

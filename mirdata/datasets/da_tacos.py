@@ -204,8 +204,8 @@ INDEXES = {
     ),
     "1.1_full": core.Index(
         filename="da_tacos_index_1.1_full.json",
-        url="https://zenodo.org/records/13916461/files/da_tacos_index_1.1_full.json?download=1",
-        checksum="27f5ee0367d0182b06a7b8eca6dce096",
+        url="https://zenodo.org/records/24325468/files/da_tacos_index_1.1_full.json?download=1",
+        checksum="012454d06a839c05ba5daeaa7374239b",
     ),
     "sample": core.Index(filename="da_tacos_index_1.1_full_sample.json"),
 }

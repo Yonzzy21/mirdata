@@ -117,8 +117,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="irmas_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/irmas_index_1.0.json?download=1",
-        checksum="5406af168ff003833cab318d07da94e8",
+        url="https://zenodo.org/records/24325468/files/irmas_index_1.0.json?download=1",
+        checksum="177cde88a23a8d8551e9212bfff4a880",
     ),
     "sample": core.Index(filename="irmas_index_1.0_sample.json"),
 }

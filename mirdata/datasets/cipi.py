@@ -58,8 +58,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="cipi_index_1.0.json",
-        url="https://zenodo.org/records/13993323/files/cipi_index_1.0.json?download=1",
-        checksum="dfc4dad2f1089049f99bfc7f4dd2595e",
+        url="https://zenodo.org/records/24325468/files/cipi_index_1.0.json?download=1",
+        checksum="54d5d93bebdeb545bc0e0e32732fdfe7",
     ),
     "sample": core.Index(filename="cipi_index_1.0_sample.json"),
 }

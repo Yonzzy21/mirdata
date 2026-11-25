@@ -63,8 +63,8 @@ INDEXES = {
     "test": "sample",
     "1.5": core.Index(
         filename="saraga_hindustani_index_1.5.json",
-        url="https://zenodo.org/records/24294116/files/saraga_hindustani_index_1.5.json?download=1",
-        checksum="f35d3210d3972ff00e350e9afad5a89b",
+        url="https://zenodo.org/records/24325468/files/saraga_hindustani_index_1.5.json?download=1",
+        checksum="78cf5b79ae6f33dd2cde4d71a3b90b0d",
     ),
     "sample": core.Index(filename="saraga_hindustani_index_1.5_sample.json"),
 }

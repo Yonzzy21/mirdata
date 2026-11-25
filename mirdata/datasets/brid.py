@@ -57,8 +57,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="brid_full_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/brid_full_index_1.0.json?download=1",
-        checksum="c2d78d6459acd8985ecbdc349b833ada",
+        url="https://zenodo.org/records/24325468/files/brid_full_index_1.0.json?download=1",
+        checksum="43281cdfceff3cf01977ae1a21cd68c0",
     ),
     "sample": core.Index(filename="brid_full_index_1.0_sample.json"),
 }

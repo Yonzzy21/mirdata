@@ -54,8 +54,8 @@ INDEXES = {
     "test": "sample",
     "+": core.Index(
         filename="giantsteps_key_index_+.json",
-        url="https://zenodo.org/records/24294116/files/giantsteps_key_index_+.json?download=1",
-        checksum="7378e1f33cb3f0adc44b7a9100e37fa7",
+        url="https://zenodo.org/records/24325468/files/giantsteps_key_index_+.json?download=1",
+        checksum="9e7f7f5087a23f1f71adf259fe241866",
     ),
     "sample": core.Index(filename="giantsteps_key_index_+_sample.json"),
 }

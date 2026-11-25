@@ -43,8 +43,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="candombe_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/candombe_index_1.0.json?download=1",
-        checksum="be667751e38648c7c40e9ec860b55b78",
+        url="https://zenodo.org/records/24325468/files/candombe_index_1.0.json?download=1",
+        checksum="91d512ac597cb9fc91e33a67986e1f20",
     ),
     "sample": core.Index(filename="candombe_index_1.0_sample.json"),
 }

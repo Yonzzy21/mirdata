@@ -69,8 +69,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="compmusic_raga_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/compmusic_raga_index_1.0.json?download=1",
-        checksum="f0191883fbecb5a4440d9df384dbc481",
+        url="https://zenodo.org/records/24325468/files/compmusic_raga_index_1.0.json?download=1",
+        checksum="827bd7025c285f35ff4cbfc38b8ee07c",
     ),
     "sample": core.Index(filename="compmusic_raga_index_1.0_sample.json"),
 }

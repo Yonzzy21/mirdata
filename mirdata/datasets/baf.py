@@ -148,8 +148,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="baf_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/baf_index_1.0.json?download=1",
-        checksum="e0163d370f9054e1e99e9201f5d660f6",
+        url="https://zenodo.org/records/24325468/files/baf_index_1.0.json?download=1",
+        checksum="cd57c0042ae95424c95e6962c4d0230a",
     ),
     "sample": core.Index(filename="baf_index_1.0_sample.json"),
 }

@@ -41,8 +41,8 @@ INDEXES = {
     "test": "sample",
     "2.0-corrected": core.Index(
         filename="salami_index_2.0-corrected.json",
-        url="https://zenodo.org/records/24294116/files/salami_index_2.0-corrected.json?download=1",
-        checksum="caef737366daf1c261d7ab6941fe15df",
+        url="https://zenodo.org/records/24325468/files/salami_index_2.0-corrected.json?download=1",
+        checksum="cd26718daca89d68f88060abe6fb74cc",
     ),
     "sample": core.Index(filename="salami_index_2.0-corrected_sample.json"),
 }

@@ -85,8 +85,8 @@ INDEXES = {
     "test": "sample",
     "7.0": core.Index(
         filename="compmusic_jingju_acappella_index_7.0.json",
-        url="https://zenodo.org/records/24294116/files/compmusic_jingju_acappella_index_7.0.json?download=1",
-        checksum="db36234782a1825489bc6d3192174f2e",
+        url="https://zenodo.org/records/24325468/files/compmusic_jingju_acappella_index_7.0.json?download=1",
+        checksum="58a447135901e7e2d8210ec2a1417350",
     ),
     "sample": core.Index(filename="compmusic_jingju_acappella_index_7.0_sample.json"),
 }

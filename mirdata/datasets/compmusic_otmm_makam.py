@@ -66,8 +66,8 @@ INDEXES = {
     "test": "sample",
     "dlfm2016-fix1": core.Index(
         filename="compmusic_otmm_makam_index_dlfm2016-fix1.json",
-        url="https://zenodo.org/records/13993317/files/compmusic_otmm_makam_index_dlfm2016-fix1.json?download=1",
-        checksum="4400d99c243a2f2d3748631abe05c311",
+        url="https://zenodo.org/records/24325468/files/compmusic_otmm_makam_index_dlfm2016-fix1.json?download=1",
+        checksum="924c42c123a6306a51672f49a50beaaa",
     ),
     "sample": core.Index(
         filename="compmusic_otmm_makam_index_dlfm2016-fix1_sample.json"

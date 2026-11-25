@@ -110,8 +110,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="egfxset_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/egfxset_index_1.0.json?download=1",
-        checksum="fb7403d9c1a4f30b0f7d4c32053ec5de",
+        url="https://zenodo.org/records/24325468/files/egfxset_index_1.0.json?download=1",
+        checksum="fada9cc8b1f6d3fcf7172f90ae2d5066",
     ),
     "sample": core.Index(filename="egfxset_index_1.0_sample.json"),
 }

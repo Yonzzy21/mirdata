@@ -78,8 +78,8 @@ INDEXES = {
     "test": "sample",
     "1.1": core.Index(
         filename="compmusic_carnatic_varnam_index_1.1.json",
-        url="https://zenodo.org/records/24294116/files/compmusic_carnatic_varnam_index_1.1.json?download=1",
-        checksum="19587453608edd00164d109197367049",
+        url="https://zenodo.org/records/24325468/files/compmusic_carnatic_varnam_index_1.1.json?download=1",
+        checksum="29d874627baae3b65aca597d7c21fe47",
     ),
     "sample": core.Index(filename="compmusic_carnatic_varnam_index_1.1_sample.json"),
 }

@@ -39,8 +39,8 @@ INDEXES = {
     "test": "sample",
     "1.0": core.Index(
         filename="orchset_index_1.0.json",
-        url="https://zenodo.org/records/24294116/files/orchset_index_1.0.json?download=1",
-        checksum="9f3ce463d4d7d8c2d05c7c478aa12a7c",
+        url="https://zenodo.org/records/24325468/files/orchset_index_1.0.json?download=1",
+        checksum="93d8cac0e5840153d315666f65cb3eb8",
     ),
     "sample": core.Index(filename="orchset_index_1.0_sample.json"),
 }
