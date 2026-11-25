@@ -65,12 +65,12 @@ def make_dataset_index(dataset_data_path):
     # top-key level version
     dataset_index = {
         "version": None,
-        "dataset_size_bytes": total_dataset_bytes,
     }
 
     # combine all in dataset index
     dataset_index.update(index_metadata)
     dataset_index.update({"tracks": index_tracks})
+    dataset_index.update({"dataset_size_bytes": total_dataset_bytes})
 
     with open(DATASET_INDEX_PATH, "w") as fhandle:
         json.dump(dataset_index, fhandle, indent=2)
